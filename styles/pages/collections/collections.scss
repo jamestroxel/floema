@@ -1,0 +1,14 @@
+.collections {
+    @extend %cover;
+
+    background: $color-quicksand;
+    color: $color-quater-spanish-white;
+
+}
+.collections__wrapper {
+    @extend %cover;
+    overflow:hidden;
+}
+.collections__content {
+    @extend %cover;
+}

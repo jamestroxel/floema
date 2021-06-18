@@ -1,0 +1,21 @@
+.detail__information__highlights {
+    margin-top: 6rem;
+}
+.detail__information__highlight {
+    align-items: center;
+    display:flex;
+    
+    &:not(:first-child) {
+        margin-top: 3.7rem;
+    }
+}
+.detail__information__highlight__icon {
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    height:4rem;
+    margin-right:3.75rem;
+    width:4rem;
+}
+.detail__information__highlight__text {
+    @extend %description-16;
+}

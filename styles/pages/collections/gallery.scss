@@ -1,0 +1,24 @@
+.collections_gallery {
+    @extend %cover;
+}
+.collections__gallery__wrapper {
+    align-items:center;
+    display:flex;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.collections__gallery__link {
+    display: block;
+    margin: 0 5.3rem;
+}
+.collection__gallery__media  {
+    height: 63rem;
+    position: relative;
+    width: 44.7rem;
+}
+.collections__gallery__media__image {
+    @extend %cover;
+
+    object-fit: cover;
+}

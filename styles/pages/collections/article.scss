@@ -1,0 +1,17 @@
+.collection__article  {
+    left: 8rem;
+    opacity:0;
+    position: absolute;
+    bottom: 8rem;
+
+    &--active {
+        opacity: 1;
+    }
+}
+.collection__article__title {
+    @extend %title-60;
+}
+.collection__article__description {
+    @extend %description-16;
+    max-width: 44rem;
+}

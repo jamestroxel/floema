@@ -1,0 +1,19 @@
+.detail {
+    @extend %cover;
+    @extend %center;
+    color: $color-quater-spanish-white;
+    background: $color-quicksand;
+}
+.detail__wrapper {
+   align-items: center;
+   display: flex;
+}
+.detail__media {
+    height: 78.3rem;
+    position: relative;
+    width: 55.4rem;
+}
+.detail__media__image {
+    @extend %cover;
+    object-fit: cover;
+}
