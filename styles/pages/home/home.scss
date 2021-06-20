@@ -54,3 +54,6 @@
     height: 6rem;
     z-index: 2;
 }
+.home__link__icon {
+    @extend %cover
+}

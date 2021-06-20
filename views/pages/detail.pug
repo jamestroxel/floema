@@ -15,14 +15,29 @@ block content
                     .detail__information__highlights
                         each highlight in product.data.highlights
                             p.detail__information__highlight 
-                                svg.detail__information__highlight__icon
-                                    use(xlink:href=`sprite-${highlight.highlights_icons.toLowerCase()}`)
-
+                                if highlight.highlights_icons == 'Arrow'
+                                    svg.detail__information__highlight__icon(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40")
+                                        g
+                                            line(opacity="0.4" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" enable-background="new" x1="14.8" y1="25.5" x2="26.2" y2="14.1")
+                                            path(fill="currentColor" d="M30.8,9.5l-0.7,2.4l0,2.6l-1.9-2.3l-2.3-1.9l2.6,0L30.8,9.5z")
+                                            path(fill="currentColor" d="M10.2,30.1l0.7-2.4l0-2.6l1.9,2.3l2.3,1.9l-2.6,0L10.2,30.1z")
+                                            path(fill="none" stroke="currentColor" d="M20,0.5c10.8,0,19.5,8.7,19.5,19.5S30.8,39.5,20,39.5S0.5,30.8,0.5,20S9.2,0.5,20,0.5z")
+                                                use(xlink:href=`sprite-${highlight.highlights_icons.toLowerCase()}`)
+                                else
+                                    svg.detail__information__highlight__icon(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40")
+                                        g
+                                            path(stroke="currentColor" opacity="0.4" fill="none" d="M19.5,0.5c10.5,0,19,8.5,19,19s-8.5,19-19,19s-19-8.5-19-19S9,0.5,19.5,0.5z")
+                                            path(fill="currentColor" d="M23.7,9.6L21,18l8.5-2.6l-8,4l8,4.2L21,20.9l2.8,8.7l-4.2-8.1l-4,8l2.6-8.5l-8.4,2.7l8-4.1l-8.1-4.2l8.6,2.8l-2.8-8.6l4.2,8.1L23.7,9.6z")
+                                                use(xlink:href=`sprite-${highlight.highlights_icons.toLowerCase()}`)
                                 span.detail__information__highlight__text!=highlight.highlights_text.replace(/\n/, '<br>')
 
-                .detail__information__list
-                    each item in product.data.information 
-                        p.detail__information__item 
-                            strong.detail__information__item__title=item.information_label
-                            span.detail__information__item__description=item.information_description
-                a.detail__information__link(href=product.data.link_url.url target="_blank")=product.data.link_text
+                    .detail__information__list
+                        each item in product.data.information 
+                            p.detail__information__item 
+                                strong.detail__information__item__title=item.information_label
+                                span.detail__information__item__description=item.information_description
+                    a.detail__information__link(href=product.data.link_url.url target="_blank")=product.data.link_text
+                        
+        a.button.detail__button Close       
+            svg.detail__button__icon(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 124 60") 
+                        path(fill="none" stroke="currentColor" d="M62,0.5c34,0,61.5,13.2,61.5,29.5S96,59.5,62,59.5S0.5,46.3,0.5,30S28,0.5,62,0.5z")

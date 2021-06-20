@@ -10,11 +10,17 @@
     }
 }
 .detail__information__highlight__icon {
-    border: 1px solid currentColor;
-    border-radius: 50%;
     height:4rem;
+    margin-left:-0.5rem;
     margin-right:3.75rem;
     width:4rem;
+
+    @include media('<phone') {
+        height: 9.2rem;
+        margin-left:-0.5rem;
+        margin-right:5.8rem;
+        width: 9.2rem;
+    }
 }
 .detail__information__highlight__text {
     @extend %description-16;
