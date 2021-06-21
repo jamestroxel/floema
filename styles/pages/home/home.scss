@@ -3,6 +3,7 @@
     @extend %center;
     background: $color-contessa;
     color: $color-quater-spanish-white;
+    overflow: hidden;
     text-align: center;
 
     &:before,
@@ -33,12 +34,6 @@
 .home__titles__title {
     @extend %vertical-titles__title;
 }
-.home__wrapper {
-    
-}
-.home__titles {
-    
-}
 .home__link {
     @extend %description-14;
     bottom: 5rem;
@@ -53,6 +48,12 @@
     width: 28.8rem;
     height: 6rem;
     z-index: 2;
+
+    @include media('<=phone') {
+        bottom: 7.5rem;
+        width: 55rem;
+        height: 13.7rem;
+    }
 }
 .home__link__icon {
     @extend %cover

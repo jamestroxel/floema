@@ -11,4 +11,30 @@
 }
 .collections__content {
     @extend %cover;
+
+    @include media('<=phone') {
+        display: none;
+    }
+}
+
+.collections__mobile {
+    display: flex;
+    bottom:5rem;
+    position: absolute;
+    @include media('>phone') {
+        display: none;
+    }
+}
+.collections__mobile__item {
+    width: 100vw;
+    padding-left: 5rem;
+}
+.collections__mobile__item__label {
+    font-size: 2rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+}
+.collections__mobile__item__title {
+    font-family: $font-george-x;
+    font-size: 12rem;
 }

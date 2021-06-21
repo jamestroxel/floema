@@ -1,9 +1,8 @@
 .home__gallery {
     @extend %cover;
+    
+    visibility: hidden;
 }
 .home__gallery__media {
     position: absolute;
-}
-.home__gallery__media__image {
-    
 }

@@ -1,7 +1,7 @@
 .detail__information {
     padding-left: 8.2rem;
 
-    @include media('<phone') {
+    @include media('<=phone') {
         padding-left: 0;
     }
 }
@@ -16,7 +16,7 @@
 .detail__information__content {
     padding-left:18rem;
 
-    @include media('<phone') {
+    @include media('<=phone') {
         padding-left: 0;
     }
 }
@@ -37,7 +37,7 @@
     padding-right:2.5rem;
     width: 10rem;
     
-    @include media('<phone') {
+    @include media('<=phone') {
         padding-right:5rem;
         width: 15rem;
     }
@@ -53,7 +53,7 @@
     margin-top: 3rem;
 }
 .detail__button {
-    
+    @extend %description-14;
     align-items: center;
     bottom: 5rem;
     cursor: pointer;
@@ -66,7 +66,7 @@
     width: 12.4rem;
     z-index: 2;
 
-    @include media('<phone') {
+    @include media('<=phone') {
         font-size: 3rem;
         bottom: 12rem;
         height: 13rem;

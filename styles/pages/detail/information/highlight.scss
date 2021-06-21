@@ -15,7 +15,7 @@
     margin-right:3.75rem;
     width:4rem;
 
-    @include media('<phone') {
+    @include media('<=phone') {
         height: 9.2rem;
         margin-left:-0.5rem;
         margin-right:5.8rem;
