@@ -1,38 +1,26 @@
 import Component from 'classes/Component'
-export default class Animation extends Component {
-  constructor ({ element, elements }) {
+
+export default class AsyncLoad extends Component {
+  constructor ({ element }) {
     super({
-      element,
-      elements
+      element
     })
-
     this.createObserver()
-
-    this.animateOut()
   }
 
   createObserver () {
     this.observer = new window.IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          this.animateIn()
-        } else {
-          this.animateIn()
+          if (!this.element.src) {
+            this.element.src = this.element.getAttribute('data-src')
+            this.element.onload = _ => {
+              this.element.classList.add('loaded')
+            }
+          }
         }
       })
     })
     this.observer.observe(this.element)
-  }
-
-  animateIn () {
-
-  }
-
-  animateOut () {
-
-  }
-
-  onResize () {
-
   }
 }

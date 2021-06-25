@@ -5,6 +5,8 @@ const errorHandler = require('errorhandler')
 const app = express()
 const path = require('path')
 const port = 3000
+
+const UAParser = require('ua-parser-js')
 const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
 const logger = require('morgan')
@@ -39,6 +41,14 @@ const handleLinkResolver = doc => {
 // eslint-disable-next-line no-var
 
 app.use((req, res, next) => {
+  const ua = UAParser(req.headers['user-agent'])
+  
+  res.locals.isDesktop = ua.device.type === undefined
+  res.locals.isPhone = ua.device.type === 'mobile'
+  res.locals.isTablet = ua.device.type === 'tablet'
+
+  console.log(res.locals.isTablet, res.locals.isDesktop, res.locals.isPhone)
+
   res.locals.Link = handleLinkResolver
   res.locals.PrismicDOM = PrismicDOM
   res.locals.Numbers = index => {

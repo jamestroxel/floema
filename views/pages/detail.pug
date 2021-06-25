@@ -3,7 +3,7 @@ extends ../base.pug
 block variables 
     - var template ='detail'
 block content 
-    .detail     
+    .detail(data-background="#BC978C" data-color="#F9F1E7")      
         .detail__wrapper 
             figure.detail__media 
                 img.detail__media__image(alt=product.data.image.alt data-src=product.data.image.url)
@@ -41,3 +41,4 @@ block content
         a.button.detail__button Close       
             svg.detail__button__icon(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 124 60") 
                         path(fill="none" stroke="currentColor" d="M62,0.5c34,0,61.5,13.2,61.5,29.5S96,59.5,62,59.5S0.5,46.3,0.5,30S28,0.5,62,0.5z")
+                        path.detail__button__icon__path(fill="none" stroke="#FFC400" d="M62,0.5c34,0,61.5,13.2,61.5,29.5S96,59.5,62,59.5S0.5,46.3,0.5,30S28,0.5,62,0.5z")

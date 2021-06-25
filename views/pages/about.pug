@@ -3,7 +3,7 @@ extends ../base.pug
 block variables 
     - var template ='about'
 block content 
-    .about      
+    .about(data-background="#B2B8C3" data-color="#37384C")     
         .about__wrapper
             section.about__gallery
                 .about__gallery__wrapper
@@ -20,7 +20,7 @@ block content
                         .about__content__box
                             p.about__content__label(data-animation="body")!=section.primary.label
 
-                            .about__content__description(data-animation="body")!=PrismicDOM.RichText.asHtml(section.primary.description)
+                            .about__content__description!=PrismicDOM.RichText.asHtml(section.primary.description).replace(/<p>/g, '<p data-animation="body">')
 
                         figure.about__content__media 
                             img.about__content__media__image(alt=section.primary.alt data-src=section.primary.image.url)
@@ -31,7 +31,7 @@ block content
                             if section.primary.label
                                 p.about__highlight__label(data-animation="title")=section.primary.label
 
-                            h3.about__highlight__title(data-animation="title")=section.primary.title
+                            h3.about__highlight__title(data-animation="highlight")=section.primary.title
                             .about__highlight__medias
                                 each media in section.items 
                                     figure.about__highlight__media 
